@@ -1,0 +1,29 @@
+.container {
+  padding-top: 40px;
+}
+
+#messages {
+  max-height: 300px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.nickname {
+  position: relative;
+  top: -1px;
+  text-align: right;
+  font-weight: bold;
+}
+
+.content {
+  margin-left: 10px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  border-left: 1px solid #ccc;
+}
+
+.time {
+  margin-left: 0;
+  text-align: right;
+  color: #ccc;
+}
