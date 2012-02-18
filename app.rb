@@ -172,16 +172,9 @@ class App < Sinatra::Base
     redirect "/"
   end
 
-  post "/messages" do
+  post "/messages", :provides => :json do
     if current_user
-      content_type :json
-
-      # We're gonna talk about this later...
-      message = present(Message.create(:user_id => current_user.id, :content => params["content"]))
-
-      # ...and this too!
-      Pusher['messages'].trigger_async('create', message.to_hash)
-
+      message = MessageWithPushService.create(:user_id => current_user.id, :content => params["content"])
       { :status => "ok", :message => message.to_hash }.to_json
     else
       halt 401
@@ -204,5 +197,13 @@ class App < Sinatra::Base
     else
       halt 401
     end
+  end
+end
+
+module MessageWithPushService
+  def self.create(params)
+    message = MessagePresentation.new(Message.create(params))
+    Pusher['messages'].trigger_async('create', message.to_hash)
+    message
   end
 end
