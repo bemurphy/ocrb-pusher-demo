@@ -5,7 +5,6 @@ require 'faker'
 require 'pusher'
 require 'ohm'
 require 'ohm/contrib'
-require 'securerandom'
 require 'tzinfo'
 require 'delegate'
 require 'json'
@@ -141,7 +140,7 @@ class App < Sinatra::Base
     end
 
     def current_user_id
-      current_user.id
+      current_user && current_user.id
     end
   end
 
