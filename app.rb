@@ -172,10 +172,8 @@ class App < Sinatra::Base
     redirect "/"
   end
 
-  post "/messages" do
+  post "/messages", :provides => :json do
     if current_user
-      content_type :json
-
       # We're gonna talk about this later...
       message = present(Message.create(:user_id => current_user.id, :content => params["content"]))
 
