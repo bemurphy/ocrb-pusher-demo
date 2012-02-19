@@ -20,7 +20,7 @@ class User < Ohm::Model
 
   collection :messages, Message
 
-  before :save, :downcase_nickname 
+  before :save, :downcase_nickname
 
   def validate
     assert_unique :nickname
@@ -32,7 +32,10 @@ class User < Ohm::Model
   end
 
   def self.create_fake
-    create(:nickname => Faker::Name.first_name)
+    begin
+      user = create(:nickname => Faker::Name.first_name)
+    end until user.valid?
+    user
   end
 
   private
@@ -67,7 +70,7 @@ class Message < Ohm::Model
   def self.create_fake
     user = User.create_fake
     create(
-      :user_id => user.id, 
+      :user_id => user.id,
       :content => Faker::Lorem.sentence
     )
   end
@@ -145,7 +148,7 @@ class App < Sinatra::Base
   helpers Helpers
 
   # Set the session accessible for Mustache, kinda lame
-  before { @session = session } 
+  before { @session = session }
 
   get "/" do
     redirect "/login" unless current_user
