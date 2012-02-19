@@ -22,6 +22,7 @@ class User < Ohm::Model
   before :save, :downcase_nickname
 
   def validate
+    assert_present :nickname
     assert_unique :nickname
   end
 
