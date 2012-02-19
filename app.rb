@@ -147,9 +147,6 @@ class App < Sinatra::Base
 
   helpers Helpers
 
-  # Set the session accessible for Mustache, kinda lame
-  before { @session = session }
-
   get "/" do
     redirect "/login" unless current_user
 
