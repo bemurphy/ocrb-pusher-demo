@@ -2,7 +2,6 @@ source "http://rubygems.org"
 
 gem "sinatra", "~> 1.3.2"
 gem "mustache", "~> 0.99.4"
-gem "tilt-mustache", "~> 0.0.2"
 gem "pusher", "~> 0.9.2"
 gem "ohm", "~> 0.1.3"
 gem "ohm-contrib", "~> 0.1.2"

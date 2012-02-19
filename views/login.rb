@@ -1,6 +1,6 @@
 class App
   module Views
-    class Login < Mustache
+    class Login < Layout
     end
   end
 end
