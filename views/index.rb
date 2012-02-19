@@ -1,6 +1,6 @@
 class App
   module Views
-    class Index < Mustache
+    class Index < Layout
       include App::Helpers
     end
   end

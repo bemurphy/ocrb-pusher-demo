@@ -3,27 +3,34 @@
 </script>
 
 <script type="text/javascript">
-  App.userRef = '{{ user_ref }}';
+  App.currentUserId = '{{ current_user_id }}';
 </script>
 
-<div class="row">
+<div class="row-fluid">
+  <div class="span2">
+    <div class="well sidebar-nav">
+      <ul id="roster" class="nav nav-list">
+      </ul>
+    </div>
+  </div>
+
   <div class="span9">
+    <a href="/logout" class="logout">Logout</a>
     <form action="/messages" method="POST" id="create_message" class="well">
-      <input type="text" class="span3" name="nickname" value="" placeholder="Name" />
+      <input type="text" class="span3" name="nickname" value="{{current_user.nickname}}" placeholder="Name" />
       <label for="content">Message:</label>
       <textarea class="span8" name="content"></textarea><br />
       <button type="submit" class="btn">Submit</button>
     </form>
   </div>
-</div>
 
-<div class="row">
   <div class="span9">
     <div id="messages" class="well">
       {{#messages}}
-        <!-- Render the message partial -->
-        {{>message}}
+      <!-- Render the message partial -->
+      {{>message}}
       {{/messages}}
     </div>
   </div>
+
 </div>
