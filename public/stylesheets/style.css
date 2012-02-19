@@ -1,5 +1,19 @@
-.container {
+.container-fluid {
   padding-top: 40px;
+}
+
+.sidebar-nav {
+  min-height: 503px;
+}
+
+#roster li {
+  font-size: 1.5em;
+  line-height: 1.5em;
+}
+
+a.logout {
+  padding: 10px 20px 0 0;;
+  float: right;
 }
 
 #messages {
