@@ -7,7 +7,7 @@
 
 !SLIDE transition=cover small bullets incremental
 * Imagine we start introducing the notion of a coupon code to our app
-* The first place it appears in our case is a controller.  Perhaps we're checking a param.
+* The first place it appears in our case is a controller.  Perhaps we're checking a param for a view level concern: which partial to render for click tracking.
 * We can tell if it's an affiliate code by checking if it starts with 'aff-'
 
 !SLIDE transition=cover small
@@ -88,6 +88,7 @@
 
     @@@ ruby
     sale.coupon_code = "foo"
+    sale.coupon_code.class # => CouponCode
     sale.coupon_code.is_affiliate?  # => false
     sale.coupon_code = "aff-foo"
     sale.coupon_code.is_affiliate?  # => true
