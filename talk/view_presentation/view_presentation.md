@@ -7,10 +7,11 @@
 
 !SLIDE transition=cover bullets
 # You need a profile page that shows a user
-  * First Name
-  * Last Name
-  * Phone Number
-  * Email
+* First Name
+* Last Name
+* Phone Number
+* Email
+
 .notes Write a simple sinatra user and view
 
 !SLIDE transition=cover
