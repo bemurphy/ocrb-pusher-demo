@@ -71,3 +71,4 @@
 * Imagine a job that is used by multiple models: a similar email is generated to an admin when a User, Post, Project, or Page is updated
 * What if you farm different jobs to different libraries, or are migrating?
 * Delayed::Job serializes objects;  Resque takes JSON-ables.  Change implementation details closer to where it matters.
+* More direct mocking in your unit tests
