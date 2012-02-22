@@ -67,6 +67,47 @@
       end
     end
 
+!SLIDE transition=cover small
+
+    @@@ ruby
+    # Or you want to define what you let through
+    require 'forwardable'
+
+    class CouponCode
+      extend Forwardable
+      attr_accessor :code
+
+      def_delegators :@code, :==
+
+      def initialize(code)
+        @code = code
+      end
+
+      def is_affiliate?
+        true & code.to_s.match(/^aff-/)
+      end
+    end
+
+!SLIDE transition=cover small
+
+    @@@ ruby
+    # Or you just want to be explicit
+    class CouponCode
+      attr_accessor :code
+
+      def initialize(code)
+        @code = code
+      end
+
+      def ==(other)
+        code == other.code
+      end
+
+      def is_affiliate?
+        true & code.to_s.match(/^aff-/)
+      end
+    end
+
 !SLIDE transition=cover smaller
 
     @@@ ruby
