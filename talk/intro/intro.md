@@ -33,5 +33,11 @@
 
 # Help Yourself
 
-* At those pain points, ask yourself the question
+* At pain points, ask yourself the question
 * Do I have to rely/comply with the framework, or can *I* add something to help here?
+
+!SLIDE transition=cover smaller incremental bullets
+# Let's make some observations
+* The following are not patterns or prescriptions or rules
+* While we've got some specific examples ahead, what I'm really aiming to do is rattle your thinking with regard to objects in Ruby webapps
+* It's OK to not have perfect code, especially in smaller programs or prototypes!

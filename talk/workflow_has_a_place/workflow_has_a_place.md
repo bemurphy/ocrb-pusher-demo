@@ -28,6 +28,11 @@
 * The controller asks
 * What is this Pusher thing?
 
+!SLIDE transition=cover bullets incremental
+
+* ...and then protests
+* I'm just a front controller!
+
 !SLIDE subsection transition=cover
 
 # Let's Order a Steak
