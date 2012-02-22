@@ -5,6 +5,7 @@
 !SLIDE small transition=cover
 
     @@@ ruby
+    # Think back to the Pusher demo
     post "/messages", :provides => :json do
       if current_user
         message = present(Message.create(
@@ -37,7 +38,7 @@
 
 # Let's Order a Steak
 
-.notes Proceed to roleplay with audience ordering a steak normally with medium/rare/well done, then again with waiter asking "Cook for how long?"
+.notes Start with done-ness
 
 !SLIDE subsection transition=cover smaller
         @@@ ruby
@@ -60,7 +61,10 @@
 !SLIDE transition=cover bullets incremental
 
 * Your unit tests ask
-* What is this pusher thing, and why are you always stubbing it out?
+* What is this pusher thing, and furthermore, why are you always stubbing it out?
+
+!SLIDE transition=cover
+# Let's extract the workflow
 
 !SLIDE subsection transition=cover smaller
         @@@ ruby
@@ -93,3 +97,11 @@
             halt 401
           end
         end
+
+!SLIDE transition=cover bullets incremental
+
+# What we have now
+
+* The ability to create a message without callbacks pushing
+* The ability to create messages with test factories, without pushing
+* ...while still having reusability

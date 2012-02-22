@@ -35,7 +35,7 @@
 
 !SLIDE transition=cover bullets incremental
 
-# Our Model now couples to
+# Our model now couples to
 * The job (less bad)
 * Implementation details about queueing the job (wow, bad)
 
@@ -46,13 +46,8 @@
 !SLIDE small transition=cover
 
     @@@ ruby
-    class User < SomeOrmClass
-      def send_welcome
-        WelcomeJob.enqueue(self)
-      end
-    end
-
     class WelcomeJob < Struct.new(:user)
+      # Hide the queueing implementation
       def self.enqueue(user)
         Delayed::Job.enqueue(new user))
       end
@@ -62,10 +57,17 @@
       end
     end
 
+    class User < SomeOrmClass
+      def send_welcome
+        # Only talk to the job class
+        WelcomeJob.enqueue(self)
+      end
+    end
+
 !SLIDE smaller transition=cover bullets incremental
 
 * But if I refactor I still have to change that!
 * Yes, but you're changing it in a better place.  Common closure!
 * Imagine a job that is used by multiple models: a similar email is generated to an admin when a User, Post, Project, or Page is updated
 * What if you farm different jobs to different libraries, or are migrating?
-* Delayed::Job serializes objects;  Resque takes JSON-ables
+* Delayed::Job serializes objects;  Resque takes JSON-ables.  Change implementation details closer to where it matters.

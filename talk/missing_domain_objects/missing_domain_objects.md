@@ -8,7 +8,7 @@
 !SLIDE transition=cover small bullets incremental
 * Imagine we start introducing the notion of a coupon code to our app
 * The first place it appears in our case is a controller.  Perhaps we're checking a param.
-* We can tell if it's an affiliate code by checking if it starts with aff-
+* We can tell if it's an affiliate code by checking if it starts with 'aff-'
 
 !SLIDE transition=cover small
     @@@ ruby
@@ -93,3 +93,8 @@
     sale.coupon_code.is_affiliate?  # => true
     sale.coupon_code == "aff-foo" # => true
     sale.coupon_code == CouponCode.new("aff-foo") # => true
+
+
+!SLIDE transition=cover bullets
+* Materializing a thing that we've been using in conversation = big win!
+* Centralized logic

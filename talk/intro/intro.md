@@ -1,3 +1,7 @@
+!SLIDE subsection transition=cover 
+
+# Objects on Ruby
+
 !SLIDE subsection transition=cover bullets incremental
 
 # "Skinny Controller/Fat Model"
@@ -8,7 +12,7 @@
 !SLIDE transition=cover bullets incremental
 
 * What is the greatest tweet on Twitter?
-* "Can we stop with the "Skinny Controller, Fat Model"? OOP => Skinny everything not just controllers" @gregmoeck
+* 'Can we stop with the "Skinny Controller, Fat Model"? OOP => Skinny everything not just controllers' @gregmoeck
 
 !SLIDE subsection transition=cover incremental bullets
 # MVC is a guide not handcuffs
@@ -29,6 +33,8 @@
 
 * Cherish your namespaces!
 
+.notes Rails helper modules populate...everywhere
+
 !SLIDE subsection transition=cover bullets incremental
 
 # Help Yourself
@@ -40,4 +46,4 @@
 # Let's make some observations
 * The following are not patterns or prescriptions or rules
 * While we've got some specific examples ahead, what I'm really aiming to do is rattle your thinking with regard to objects in Ruby webapps
-* It's OK to not have perfect code, especially in smaller programs or prototypes!
+* And finally, it's OK to not have perfect code, especially in smaller programs or prototypes!
