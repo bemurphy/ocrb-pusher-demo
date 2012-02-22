@@ -53,6 +53,10 @@ App.currentContent = function(){
   return this.contentEl().val();
 };
 
+App.buttonEl = function(){
+  return $('#create_message button');
+};
+
 $(function(){
   (function(a){
     $('a.logout').click(function(e){
@@ -73,6 +77,8 @@ $(function(){
 
       e.preventDefault();
 
+      a.buttonEl().button('loading');
+
       if (content !== '') {
         $.ajax({
           url: this.action,
@@ -83,6 +89,7 @@ $(function(){
           success: function(data) {
             a.addMessage(data.message);
             a.contentEl().val('');
+            a.buttonEl().button('reset');
           }
         });
       }
