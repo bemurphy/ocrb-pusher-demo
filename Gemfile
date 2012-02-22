@@ -11,6 +11,8 @@ gem 'em-http-request', "~> 0.3.0"
 gem 'tzinfo', "~> 0.3.31"
 gem 'rack-parser', "~> 0.1.2", :require => "rack/parser"
 
+gem "showoff"
+
 group :development do
   gem "shotgun"
   gem "faker"
