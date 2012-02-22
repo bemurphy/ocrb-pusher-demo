@@ -44,7 +44,7 @@
 
 * But we are treating it _only_ as a string
 * We are spreading our logic around.  Probably cut and paste style.
-* We've got notions in the model that aren't at home there (so a Affiliate Coupon Code beings with aff-, you say?)
+* We've got notions in the model that aren't at home there (so an Affiliate Coupon Code begins with aff-, you say?)
 
 !SLIDE transition=cover
 # We're missing a domain object!
