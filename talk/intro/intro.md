@@ -44,6 +44,6 @@
 
 !SLIDE transition=cover smaller incremental bullets
 # Let's make some observations
-* The following are not patterns or prescriptions or rules
+* The following are not prescriptions or rules you have to follow
 * While we've got some specific examples ahead, what I'm really aiming to do is rattle your thinking with regard to objects in Ruby webapps
 * And finally, it's OK to not have perfect code, especially in smaller programs or prototypes!
