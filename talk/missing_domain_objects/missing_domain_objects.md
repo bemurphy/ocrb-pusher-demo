@@ -100,7 +100,7 @@
       end
 
       def ==(other)
-        code == other.code
+        code == other.to_s
       end
 
       def is_affiliate?
